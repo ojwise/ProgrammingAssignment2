@@ -6,7 +6,7 @@
 ## set - sets the value of a matrix.
 ## get - prints the value of the matrix assigned to "set" 
 ## setinverse - sets the value of the inverse of the matrix
-## getinverse - 
+## getinverse - prints value of the inverted matrix
 makeCacheMatrix <- function(x = matrix()) {
     m<-NULL
     set<-function(y){
@@ -20,8 +20,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
- ## Return a matrix that is the inverse of 'x'
+## The "cacheSolve" function calculates the inverse of a matrix. To speed computatation, the function first checks
+## the cache to to see if the inverse has already been calculated. If the cache is populated, the function simply retrieves
+## that value. Otherwise, the function finds the inverse of the matrix using the "solve" function.
 cacheSolve <- function(x, ...) { 
     m<- x$getinverse()
         if(!is.null(m)){
